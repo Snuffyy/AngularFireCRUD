@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col s12">
+    <h3>Donors</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <table class="striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Donations</th>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let donor of donors">
+        <td>{{donor.firstName}} {{donor.lastName}}</td>
+        <td>{{donor.email}}</td>
+        <td>{{donor.phone}}</td>
+        <td>{{donor.total | currency: 'EUR'}}</td>
+        <td>
+          <button [routerLink]="['/edit-donor', donor.id]" class="btn-small">Edit</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
